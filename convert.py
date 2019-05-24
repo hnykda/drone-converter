@@ -47,6 +47,8 @@ def convert_data(_data):
             secrets = convert_secrets(data)
         elif key == "environment":
             environment = convert_environment(data)
+        elif key == "ports":
+            d["settings"] = {"ports": data}
         else:
             d[key] = data
 
@@ -77,7 +79,11 @@ def unique(d):
 
 
 def convert_drone(data):
-    new_drone = {"kind": "pipeline", "name": "default"}
+    new_drone = {
+        "kind": "pipeline",
+        "name": "default",
+        "platform": {"os": "linux", "arch": "amd64"},
+    }
 
     new_drone["steps"], volumes = convert_to_steps(data["pipeline"])
 
