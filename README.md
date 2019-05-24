@@ -25,8 +25,9 @@ optional arguments:
 ```
 
 # Notes
-* anchors of elements which get converted are lost :-( . 
-* if you use `ports` (e.g. in services for DB), you need to remove it as it's
+* (todo) plugins are not converted correctly
+* (todo) anchors of elements which get converted are lost :-( . 
+* (todo) if you use `ports` (e.g. in services for DB), you need to remove it as it's
  not supported by drone anymore (at least I didn't find it in the docs) and the same ports
  as the default service is exposed is assumed (e.g. 5432:5432 for Postgre).
 * volumes are named by `vol-{0..}`. Rename to your liking.
