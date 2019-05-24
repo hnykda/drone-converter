@@ -1,6 +1,11 @@
 # Drone 0.8 -> 1.0 converter
 This converts old 0.8 `.drone.yml` to a version 1.0 variant (or close to it).
 
+According to [this](https://discourse.drone.io/t/conversion-of-drone-yml-from-0-8-to-1-0/4670?u=kotrfa)
+you should use `drone convert`. Unfortunately, this tool can't handle some of the yaml's
+features such as `<<: *anchor` or escaping in commands. This tool can be used as a complementary
+to that one.
+
 # usage
 Install deps by:
 ```
@@ -25,8 +30,10 @@ optional arguments:
 ```
 
 # Notes
-* if you use `ports` (e.g. in services for DB), you need to remove it as it's
- not supported by drone anymore (at least I didn't find it) and the same ports
+* (todo) plugins are not converted correctly
+* (todo) anchors of elements which get converted are lost :-( . 
+* (todo) if you use `ports` (e.g. in services for DB), you need to remove it as it's
+ not supported by drone anymore (at least I didn't find it in the docs) and the same ports
  as the default service is exposed is assumed (e.g. 5432:5432 for Postgre).
 * volumes are named by `vol-{0..}`. Rename to your liking.
 * after the conversion, it's recommended to run, run `drone fmt` and `drone lint`
