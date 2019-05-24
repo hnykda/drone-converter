@@ -29,4 +29,4 @@ optional arguments:
  not supported by drone anymore (at least I didn't find it) and the same ports
  as the default service is exposed is assumed (e.g. 5432:5432 for Postgre).
 * volumes are named by `vol-{0..}`. Rename to your liking.
-* after the conversion, run `drone fmt` and `drone lint`
+* after the conversion, it's recommended to run, run `drone fmt` and `drone lint`
