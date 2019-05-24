@@ -30,10 +30,7 @@ optional arguments:
 ```
 
 # Notes
-* (todo) plugins are not converted correctly
-* (todo) anchors of elements which get converted are lost :-( . 
-* (todo) if you use `ports` (e.g. in services for DB), you need to remove it as it's
- not supported by drone anymore (at least I didn't find it in the docs) and the same ports
- as the default service is exposed is assumed (e.g. 5432:5432 for Postgre).
+* (todo) plugins are not converted correctly (keys should go under a `settings`)
+* anchors of elements which get converted are lost 
 * volumes are named by `vol-{0..}`. Rename to your liking.
 * after the conversion, it's recommended to run, run `drone fmt` and `drone lint`
