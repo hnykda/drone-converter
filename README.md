@@ -1,9 +1,10 @@
-**UPDATE**: According to [this](https://discourse.drone.io/t/conversion-of-drone-yml-from-0-8-to-1-0/4670?u=kotrfa)
-you should use `drone convert`.
-
----
 # Drone 0.8 -> 1.0 converter
 This converts old 0.8 `.drone.yml` to a version 1.0 variant (or close to it).
+
+According to [this](https://discourse.drone.io/t/conversion-of-drone-yml-from-0-8-to-1-0/4670?u=kotrfa)
+you should use `drone convert`. Unfortunately, this tool can't handle some of the yaml's
+features such as `<<: *anchor` or escaping in commands. This tool can be used as a complementary
+to that one.
 
 # usage
 Install deps by:
