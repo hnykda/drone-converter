@@ -2,9 +2,9 @@
 This converts old 0.8 `.drone.yml` to a version 1.0 variant (or close to it).
 
 According to [this](https://discourse.drone.io/t/conversion-of-drone-yml-from-0-8-to-1-0/4670?u=kotrfa)
-you should use `drone convert`. Unfortunately, this tool can't handle some of the yaml's
+you should use `drone convert`. Unfortunately, that tool can't handle some of the yaml's
 features such as `<<: *anchor` or escaping in commands. This tool can be used as a complementary
-to that one.
+to the original one. I had to do some manual adjustments by hand anyway. 
 
 # usage
 Install deps by:
@@ -30,7 +30,7 @@ optional arguments:
 ```
 
 # Notes
-* (todo) plugins are not converted correctly (keys should go under a `settings`)
+* (todo) plugins are not converted correctly (keys should go under `settings`)
 * anchors of elements which get converted are lost 
 * volumes are named by `vol-{0..}`. Rename to your liking.
 * after the conversion, it's recommended to run, run `drone fmt` and `drone lint`
